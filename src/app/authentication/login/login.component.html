@@ -1,0 +1,32 @@
+<div class="container-login">
+    <div class="container">
+        <div class="login d-flex justify-content-center align-items-center vh-100">
+            <div class="card p-3">
+                <div class="card-body">
+                    <div class="img-logo d-flex justify-content-center">
+                        <img src="assets/img/clinica-logo.png" alt="">
+                    </div>
+                    <h1 class="text-center fs-3">Iniciar Sesión</h1>
+                   <form [formGroup]="formLogin" (ngSubmit)="sendData(formLogin)">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Email</label>
+                            <input formControlName="email" type="email" name="email" id="email" class="form-control">
+                        </div>
+                        
+                        <div class="mb-1">
+                            <label for="" class="form-label">Contraseña</label>
+                            <input formControlName="password" type="password" name="password" id="password" class="form-control">
+                        </div>
+                        
+                        <div class="mt-4 mb-3">
+                            <button [disabled]="formLogin.invalid || loadingButtonLogin" class="btn btn-primary w-100 d-blockm p-2 fw-bold" type="submit">
+                                <span *ngIf="!loadingButtonLogin">Entrar</span>
+                                <mat-spinner class="d-block m-auto" *ngIf="loadingButtonLogin" diameter="20" color="accent"></mat-spinner>
+                            </button>
+                        </div>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

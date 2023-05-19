@@ -1,0 +1,144 @@
+.sidebar {
+  width: 290px;
+  background-color: #D14D72;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  transition: all 0.3s;
+}
+.profile {
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.profile img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.list-items li {
+  color: #fff;
+  padding: 10px 17px;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.list-items li div i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 19px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  border-radius: 5px;
+}
+.list-items li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.nav {
+    
+  height: 60px;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+.search button{
+    background: #D14D72;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    transition: all .3s;
+    margin-left: 5px;
+}
+.search button:hover{
+    background: #272d42;
+}
+.form-control {
+    width: 300px !important;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e500;
+}
+.form-control:focus {
+  border: none;
+}
+.profile-nav{
+  cursor: pointer;
+}
+.profile-nav img {
+  width: 40px;
+  height: 42px;
+  border-radius: 50%;
+}
+.profile-nav i {
+  font-size: 25px;
+}
+.main {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.main::-webkit-scrollbar {
+    width: 7px;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: #a2a2a2;
+    border-radius: 5px;
+}
+
+
+.dropdown-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  height: 100px;
+  width: 220px;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  display: none;
+}
+
+.dropdown:before {
+  position: absolute;
+  content: "";
+  top: -6px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid #fff;
+}
+
+.rotate-180 {
+    transform: rotate(90deg);
+    transition: 0.2s linear;
+}
+.logout{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+.logo-clinica{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+h1{
+  margin: 0;
+}

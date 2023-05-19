@@ -1,0 +1,28 @@
+.card{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 35px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px;
+    border-radius: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  
+  caption,
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+    line-height: 1.5;
+    color: black;
+    text-align: center;
+  }
+  tr:nth-of-type(2n) {
+    background: hsl(0% 0% 05 / 0.1);
+  }

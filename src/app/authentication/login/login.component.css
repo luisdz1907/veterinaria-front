@@ -1,0 +1,38 @@
+.img-logo img {
+  width: 200px;
+}
+.container-login {
+  background-image: url("../../../assets/img/bg-login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card {
+  border: 2px solid #f2f2f2;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),
+    0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),
+    0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 26px;
+  width: 400px;
+}
+.form-label {
+  color: #8b8e98;
+  font-size: 16px;
+}
+.form-control {
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e500;
+}
+.form-control:focus {
+  border: none;
+}
+.btn-primary {
+  background-color: #e49393 !important;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #be5a83 !important;
+}
+a {
+  color: #be5a83;
+  font-weight: 600;
+}

@@ -1,0 +1,57 @@
+<div class="d-flex">
+  <aside class="sidebar vh-100">
+    <div class="d-flex justify-content-center align-items-center gap-2 py-3">
+      <img class="logo-clinica" src="../../assets/img/clinica-logo.png" alt="">
+      <h1 class="text-light fs-5">Sistema Veterinaria</h1>
+    </div>
+    <div class="mt-2 profile px-2 d-flex align-items-center gap-2">
+      <img [src]="userSesion| imageUser" [alt]="userSesion?.name">
+      <div class="d-flex flex-column">
+        <span class="text-white fw-medium">{{userSesion?.name}}</span>
+        <span class="text-white fw-light">Admin</span>
+      </div>
+    </div>
+
+    <ul class="list-items list-group px-2 list-unstyled d-flex  justify-content-center mt-3">
+
+      <div *ngFor="let item of listLinks; let i = index">
+
+        <li class="mt-2" (click)="toggleSidebar(collapsed === i ? null : i)">      
+          <div [ngClass]="['d-flex', 'align-items-center', item.childrens.length >= 1 ? 'justify-content-between' : 'gap-4']" [routerLink]="item.childrens.length < 1 ? '/main/home' : ''">
+            <i [class]='item.icon'></i>
+            <span>{{ item.name }}</span>
+            <i *ngIf="item.childrens.length >= 1" [class]="[collapsed === i ? 'rotate-180' : '#', 'bx', 'bx-chevron-right','bg-transparent']"></i>
+          </div>
+
+          <ul class="list-unstyled mt-1" [ngStyle]="{'transform': collapsed === i ? 'scaleY(1)' : 'none', 'display': collapsed === i ? 'block' : 'none'}">
+            <li *ngFor="let children of item.childrens">
+              <a class="text-decoration-none text-white" [routerLink]="children.link">{{ children.title }}</a>
+            </li>
+          </ul>
+        </li>
+
+    </div>
+
+    </ul>
+
+  </aside>
+  
+  <div class="wrapper w-100">
+    <div class="nav w-100 d-flex justify-content-between  align-items-center px-4">
+      <div class="d-flex align-items-center search">
+        <input type="text" placeholder="Buscar..." class="form-control">
+        <button>
+          <i class='bx bx-search' ></i>
+        </button>
+      </div>
+      <div class="profile-nav d-flex align-items-center gap-2">
+        <img [src]="userSesion| imageUser" [alt]="userSesion?.name">
+        <button class="logout" (click)="logoutUser()">Cerrar sesión</button>
+      </div>
+    </div>
+    
+    <div class="main w-100 vh-100 p-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

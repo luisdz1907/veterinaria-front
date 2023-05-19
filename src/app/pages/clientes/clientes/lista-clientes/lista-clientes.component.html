@@ -1,0 +1,84 @@
+<div class="">
+  <h1 class="mt-2 text-center fs-1">Listado de clientes</h1>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="search my-3">
+      <input
+        class="d-block"
+        type="text"
+        name="search"
+        id="searchInput"
+        placeholder="Buscar cliente..."
+        (input)="filterTable($event.target)"
+      />
+      <mat-icon class="icon">search</mat-icon>
+    </div>
+    <button mat-button color="primary" (click)="onOpenModal(modal)">
+      Crear cliente
+    </button>
+  </div>
+  <app-loading
+    [loading]="loader"
+    class="d-flex justify-content-center"
+    #loading
+  ></app-loading>
+  <div class="table-container" *ngIf="!loader">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Identificacion</th>
+          <th>Telefono</th>
+          <th>Email</th>
+          <th>Direccion</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          ng
+          *ngFor="let item of clientesFilter | paginate : config; let i = index"
+        >
+          <td>{{ item.id }}</td>
+          <td>{{ item.nombres }}</td>
+          <td>{{ item.apellidos }}</td>
+          <td>{{ item.identificacion }}</td>
+          <td>{{ item.telefono }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.direccion }}</td>
+          <td>
+            <a mat-button (click)="onOpenModal(modal)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <button mat-button (click)="deleteCliente(item)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls
+      class="my-pagination mt-2"
+      (pageChange)="onPageChange($event)"
+      [id]="config.id ? config.id : 'default-id'"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    ></pagination-controls>
+  </div>
+</div>
+
+<ng-template #modal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Crear cliente</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="onCloseModal()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-crear-cliente [bsModalRef]="bsModalRef"></app-crear-cliente>
+  </div>
+</ng-template>

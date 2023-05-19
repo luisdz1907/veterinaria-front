@@ -1,0 +1,17 @@
+<ng-template #modal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Título del modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="onCloseModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <ng-content select="[mi-slot]">
+        
+      </ng-content>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" >Cerrar</button>
+      <button type="button" class="btn btn-primary" (click)="onCloseModal()">Guardar</button>
+    </div>
+  </ng-template>

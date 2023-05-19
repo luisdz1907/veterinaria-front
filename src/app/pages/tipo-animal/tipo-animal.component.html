@@ -1,0 +1,55 @@
+<div>
+  <h1 class="mt-2 text-center fs-1">Tipo de Animales</h1>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <h2 class="text-center">Lista de tipos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R1C2</td>
+              <td>Eliminar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card">
+        <h2 class="text-center">Crear nuevo tipo</h2>
+        <form [formGroup]="formTipoAnimal">
+          <div class="d-flex gap-2 justify-content-center flex-column">
+            <mat-form-field>
+              <mat-label>Nombres</mat-label>
+              <input matInput formControlName="nombre_tipo" type="text" />
+            </mat-form-field>
+          </div>
+
+          <button
+            [disabled]="formTipoAnimal.invalid || loadingButtonSubmit"
+            class="button-submit"
+            mat-button
+            mat-flat-button
+            color="accent"
+            type="submit"
+          >
+            <span *ngIf="!loadingButtonSubmit">Guardar</span>
+            <mat-spinner
+              class="d-block m-auto"
+              *ngIf="loadingButtonSubmit"
+              diameter="20"
+              color="accent"
+            ></mat-spinner>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
